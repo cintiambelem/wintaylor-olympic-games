@@ -79,7 +79,7 @@ public class AthleteService {
         });
     }
 
-    public Map<String, Athlete> getPreSelectedForParisFootball() {
+    public Map<String, Athlete> getPreSelectedFemaleAthletesUnder20ExcludingFootball() {
         return athleteMap.entrySet().stream()
             .filter(entry -> {
                 Athlete athlete = entry.getValue();

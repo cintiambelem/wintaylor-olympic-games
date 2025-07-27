@@ -30,7 +30,7 @@ public class TeamController {
     @Operation(description = "Exercício 6")
     public ResponseEntity<String> addAthleteToTeam(@Valid @RequestBody AthleteRequest request) {
         try {
-            teamService.addAthleteToTeam(request);
+            teamService.addAthleteToTeamBrazilMaleFootball(request);
             return ResponseEntity.ok("Athlet added to team successfully.");
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -54,14 +54,14 @@ public class TeamController {
     @GetMapping("/paris/preselection")
     @Operation(description = "Exercício 9")
     public ResponseEntity<Map<String, Athlete>> getPreSelectionForParis() {
-        Map<String, Athlete> preSelected = athleteService.getPreSelectedForParisFootball();
+        Map<String, Athlete> preSelected = athleteService.getPreSelectedFemaleAthletesUnder20ExcludingFootball();
         return ResponseEntity.ok(preSelected);
     }
 
     @PostMapping("/paris/preselection/add-and-list")
     @Operation(description = "Exercício 10")
     public ResponseEntity<Map<String, Athlete>> addAndPreselectParisAthletes(@Valid @RequestBody AthleteRequest request) {
-        Map<String, Athlete> result = teamService.addAndPreselectParisAthletes(request);
+        Map<String, Athlete> result = teamService.addFemaleAthleticBrazilAndPreselectParisAthletes(request);
         return ResponseEntity.ok(result);
     }
 

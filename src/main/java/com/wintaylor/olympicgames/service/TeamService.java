@@ -19,11 +19,11 @@ public class TeamService {
         this.athleteService = athleteService;
     }
 
-    public void addAthleteToTeam(AthleteRequest request) {
+    public void addAthleteToTeamBrazilMaleFootball(AthleteRequest request) {
         if (!"BRA".equalsIgnoreCase(request.getCountry())
                 || !"male".equalsIgnoreCase(request.getGender())
                 || !"football".equalsIgnoreCase(request.getSport())) {
-            throw new IllegalArgumentException("Only male football athletes from Brazil can be added to the team.");
+            throw new IllegalArgumentException("Only male football athletes from Brazil are allowed to join the team.");
         }
 
         Athlete newAthlete = new Athlete();
@@ -40,7 +40,30 @@ public class TeamService {
         athleteService.getAll().put(newId, newAthlete);
     }
 
-    public Map<String, Athlete> addAndPreselectParisAthletes(@NotNull AthleteRequest request) {
+
+    public void addAthleteToTeam(@NotNull AthleteRequest request) {
+        Athlete newAthlete = new Athlete();
+        newAthlete.setContinent(request.getContinent());
+        newAthlete.setCountry(request.getCountry());
+        newAthlete.setGender(request.getGender());
+        newAthlete.setSport(request.getSport());
+        newAthlete.setHeight(request.getHeight());
+        newAthlete.setWeight(request.getWeight());
+        newAthlete.setAge(request.getAge());
+        newAthlete.setBmi(request.getBmi());
+
+        String newId = String.valueOf(athleteService.getAll().size());
+        athleteService.getAll().put(newId, newAthlete);
+    }
+
+
+    public Map<String, Athlete> addFemaleAthleticBrazilAndPreselectParisAthletes(@NotNull AthleteRequest request) {
+        if (!"BRA".equalsIgnoreCase(request.getCountry())
+                || !"female".equalsIgnoreCase(request.getGender())
+                || !"athletics".equalsIgnoreCase(request.getSport())) {
+            throw new IllegalArgumentException("Only female athletes from Brazil are allowed to join the team.");
+        }
+
         Athlete newAthlete = new Athlete();
         newAthlete.setContinent(request.getContinent());
         newAthlete.setCountry(request.getCountry());
@@ -55,7 +78,7 @@ public class TeamService {
         String newId = String.valueOf(athletes.size());
         athletes.put(newId, newAthlete);
 
-        return athleteService.getPreSelectedForParisFootball();
+        return athleteService.getPreSelectedFemaleAthletesUnder20ExcludingFootball();
     }
 
     public List<Athlete> filterAthletes(AthleteFilterRequest filter) {

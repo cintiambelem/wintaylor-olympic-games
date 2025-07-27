@@ -122,7 +122,9 @@ Exemplo de body:
   "sport": "football"
 }
 ```
-
+Obs: Esse endpoint possui regra de validação para que atenda as condições estabelecidas no enunciado do exercício. 
+Contudo, para que o serviço seja mais flexível e reutilizável, foi criado o método abaixo, que permite a inserção de atletas de qualquer país e modalidade esportiva.
+`TeamService.addAthleteToTeam(AthleteRequest)`
 ---
 
 ### Exercício 7
@@ -132,6 +134,8 @@ Exemplo de body:
 Criar um endpoint que liste todos os atletas da seleção de futebol olímpica masculina do Brasil.
 
 Exemplo: `GET api/team/filter?country=BRA&sport=football&gender=male`
+
+Obs: Para maior flexibilidade, esse endpoint aceita filtros de todos os países, gêneros e esportes.
 
 ---
 
@@ -143,13 +147,13 @@ Criar um endpoint que edite a informação de um determinado atleta.
 
 Campos editáveis:
 ```
-"height": número (Double)
+"height": Double
 
-"weight": número (Double)
+"weight": Double
 
-"age": número (Double)
+"age": Double
 
-"bmi": número (Double)
+"bmi": Double
 
 "continent": string
 
@@ -186,19 +190,24 @@ Criar um endpoint que:
 
 • liste os resultados
 
+Obs: Esse endpoint possui regra de validação para que atenda as condições estabelecidas no enunciado do exercício.
+Contudo, para que o serviço seja mais flexível e reutilizável, foi criado o método abaixo, que permite a inserção de atletas de qualquer país e modalidade esportiva.
+`TeamService.addAthleteToTeam(AthleteRequest)`
+
 ---
 
-Para acessar o Swagger da API, acesse:  
+Para acessar o Swagger da API, rode aplicação localmente e acesse:  
 ```
 http://localhost:10001/swagger-ui/index.html
 ```
 
 <div align="center">
 
-## 👩‍💻 Desenvolvido por
-
+### 👩‍💻 Desenvolvido por 
 **Cíntia Maria Belém**  
 [GitHub](https://github.com/cintiambelem)
+| [LinkedIn](https://www.linkedin.com/in/cintiambelem/)
+[| Repositório do projeto](https://github.com/cintiambelem/wintaylor-olympic-games)
 
 </div>
 
