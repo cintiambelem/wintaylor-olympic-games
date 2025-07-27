@@ -174,8 +174,36 @@ Criar um endpoint que:
 • faça uma pré seleção para os jogos olímpicos de Paris, apenas deverão ser consideradas as atletas femininas de todas as modalidades excepto o futebol e com menos de 20 anos.
 
 • liste os resultados
+
 Esse resultado deverá ser guardado numa estrutura igual à estrutura presente no exercício 1.
 
+Response:
+```json
+{
+  "1462": {
+    "continent": "North America",
+    "country": "BRA",
+    "height": 1.67,
+    "weight": 59.0,
+    "age": 18.4,
+    "gender": "female",
+    "sport": "equestrian",
+    "BMI": 21.2
+  },
+  "9184": {
+    "continent": "Europe",
+    "country": "RSA",
+    "height": 1.66,
+    "weight": 63.0,
+    "age": 19.9,
+    "gender": "female",
+    "sport": "aquatics",
+    "BMI": 22.9
+  },
+  "..."
+}
+
+```
 ---
 
 ### Exercício 10
@@ -207,7 +235,7 @@ http://localhost:10001/swagger-ui/index.html
 **Cíntia Maria Belém**  
 [GitHub](https://github.com/cintiambelem)
 | [LinkedIn](https://www.linkedin.com/in/cintiambelem/)
-[| Repositório do projeto](https://github.com/cintiambelem/wintaylor-olympic-games)
+| [Repositório do projeto](https://github.com/cintiambelem/wintaylor-olympic-games)
 
 </div>
 
